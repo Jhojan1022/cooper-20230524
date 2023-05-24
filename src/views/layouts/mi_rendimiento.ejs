@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráfico con Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart"></canvas>
+
+    <script>
+        // Obtener el contexto del lienzo
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        // Datos del gráfico
+        var data = {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+            datasets: [{
+                label: 'Rendimiento por mes',
+                data: [120, 150, 180, 90, 200],
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        // Opciones del gráfico
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false
+        };
+
+        // Crear el gráfico
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+</html>
